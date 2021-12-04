@@ -47,6 +47,11 @@ module.exports = {
     //  port: 8545,            // Standard Ethereum port (default: none)
     //  network_id: "*",       // Any network (default: none)
     // },
+    mainnet_fork: {
+      host: "127.0.0.1",
+      port: 8545,
+      network_id: 999,
+    },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
@@ -72,6 +77,12 @@ module.exports = {
       gas: 5000000,
       gasPrice: 25000000000
     },
+    mainnet: {
+      provider: () => new HDWalletProvider(mnemonic, `https://mainnet.infura.io/v3/${projectId}`),
+      network_id: 1,   // Mainnet's id
+      gas: 5000000,
+      gasPrice: 25000000000
+    }
     // Useful for private networks
     // private: {
     // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
